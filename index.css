@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+  font-family: "Nanum Gothic", sans-serif;
+}
+
+body[data-mode="dark"] {
+  background-color: black;
+  color: white;
+}
+
+.page {
+  width: 100vw;
+  height: 101vh;
+  padding: 0 65px;
+  overflow-x: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  .page {
+    padding: 0 20px;
+  }
+}

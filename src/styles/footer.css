@@ -1,0 +1,32 @@
+.footer {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  right: 1em;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.footer__item {
+  --size: 1em;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.3);
+  margin: 0.5em;
+}
+
+.footer__item.active {
+  background-color: black;
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    right: 0.5em;
+  }
+
+  .footer__item {
+    --size: 0.8em;
+    margin: 0.3em;
+  }
+}

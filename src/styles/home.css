@@ -1,0 +1,66 @@
+.home {
+  display: flex;
+  align-items: center;
+  font-size: 4.3rem;
+  font-family: "Nanum Gothic", sans-serif;
+}
+
+.home__greeting {
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+@media screen and (max-width: 768px) {
+  .home {
+    font-size: 2.3rem;
+  }
+}
+
+.home__greeting__item:nth-child(3) {
+  display: flex;
+  margin-bottom: 0.3em;
+}
+
+.hero-name {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  overflow: hidden;
+  background-color: white;
+}
+
+.reveal-name {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  /* background-color: lightcoral; */
+  mix-blend-mode: lighten;
+  animation: reveal 2s ease infinite;
+}
+
+body[data-mode="dark"] .hero-name {
+  background-color: black;
+}
+
+body[data-mode="dark"] .reveal-name {
+  mix-blend-mode: darken;
+}
+
+@keyframes reveal {
+  0% {
+    left: -100%;
+  }
+
+  25% {
+    left: 0%;
+  }
+
+  75% {
+    left: 0%;
+  }
+  100% {
+    left: -100%;
+  }
+}

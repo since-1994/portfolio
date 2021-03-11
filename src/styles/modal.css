@@ -1,0 +1,89 @@
+.modal {
+  position: fixed;
+  visibility: hidden;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.modal.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal__overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal__content {
+  position: relative;
+  width: 50%;
+  height: 50%;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: black;
+}
+
+@media screen and (max-width: 768px) {
+  .modal__content {
+    width: 95%;
+  }
+}
+
+.modal__content__item {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 15px 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 630px;
+}
+
+.modal__content__item > * {
+  margin: 0;
+  margin: 0 5px;
+}
+
+.modal__content__item-logo {
+  border: 2px solid black;
+  font-size: 2.3rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  font-family: "Libre Baskerville", serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__close-btn {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  transform: translate(-50% -50%);
+  font-size: 1.5rem;
+  color: black;
+  cursor: pointer;
+}
+
+.modal__close-btn i {
+  pointer-events: none;
+}

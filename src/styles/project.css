@@ -1,0 +1,72 @@
+.project {
+  display: flex;
+  align-items: center;
+}
+.project__items {
+  display: flex;
+  flex-direction: column;
+  height: 70%;
+}
+
+.project__item {
+  margin: 0.5rem;
+  width: 100%;
+  min-height: 30%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 0.5fr 0.3fr 2fr;
+  gap: 0.5rem;
+}
+
+.project__item__title {
+  grid-column: 1 / -1;
+  grid-row: 1/2;
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.project__item__thumbnail {
+  grid-column: 1/2;
+  grid-row: 2/-1;
+}
+
+.project__item__thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project__item__skills {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  display: flex;
+  flex-direction: column;
+}
+.project__item__skills__container {
+  display: flex;
+}
+
+.project__item__skills::before {
+  content: "사용된 기술";
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.project__item__skills .project__item__skill {
+  margin-right: 0.5rem;
+}
+
+.project__item__desc {
+  grid-column: 2/3;
+  grid-row: 3/-1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project__item__desc::before {
+  content: "프로젝트 설명";
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
