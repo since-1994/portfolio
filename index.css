@@ -3,20 +3,45 @@
   font-family: "Nanum Gothic", sans-serif;
 }
 
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* body::-webkit-scrollbar {
+  background-color: transparent;
+  width: 15px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: grey;
+  border-radius: 10px;
+  background-clip: padding-box;
+  border: 4px solid transparent;
+} */
+
 body[data-mode="dark"] {
   background-color: black;
   color: white;
 }
 
 .page {
-  width: 100vw;
+  width: 100%;
   height: 101vh;
   padding: 0 65px;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 @media screen and (max-width: 768px) {
   .page {
     padding: 0 20px;
   }
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
 }

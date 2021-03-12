@@ -1,72 +1,141 @@
 .project {
+  position: relative;
   display: flex;
   align-items: center;
+  font-size: 1.2rem;
+  /* background-color: peru; */
+}
+
+.project__items__container {
+  /* width: 100%; */
+  overflow: hidden;
 }
 .project__items {
   display: flex;
-  flex-direction: column;
-  height: 70%;
+  /* flex-wrap: nowrap; */
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  /* overflow: hidden; */
 }
-
-.project__item {
-  margin: 0.5rem;
+.project__item__container {
   width: 100%;
-  min-height: 30%;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: 0.5fr 0.3fr 2fr;
-  gap: 0.5rem;
-}
-
-.project__item__title {
-  grid-column: 1 / -1;
-  grid-row: 1/2;
+  height: 100%;
+  padding: 2em 3em;
   display: flex;
   align-items: center;
-  font-size: 1.4rem;
-  font-weight: bold;
+  flex-shrink: 0;
+}
+.project__item {
+  --color: rgba(117, 116, 116, 0.5);
+  --bright-color: rgba(219, 211, 211, 0.5);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  border-radius: 10px;
+  padding: 1em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.project__item:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.project__item:hover .project__item__thumbnail img {
+  transform: scale(2);
 }
 
 .project__item__thumbnail {
-  grid-column: 1/2;
-  grid-row: 2/-1;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 3px;
 }
 
 .project__item__thumbnail img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transform: scale(1);
 }
 
-.project__item__skills {
-  grid-column: 2/3;
-  grid-row: 2/3;
+.project__item__title {
+  flex: 2;
   display: flex;
-  flex-direction: column;
-}
-.project__item__skills__container {
-  display: flex;
-}
-
-.project__item__skills::before {
-  content: "사용된 기술";
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
   font-weight: bold;
-  margin-bottom: 0.5rem;
+  padding: 1em 0;
 }
 
-.project__item__skills .project__item__skill {
-  margin-right: 0.5rem;
+.project__item__title i {
+  margin: 0 0.5rem;
 }
 
 .project__item__desc {
-  grid-column: 2/3;
-  grid-row: 3/-1;
-  display: flex;
-  flex-direction: column;
+  flex: 2.2;
+  line-height: 1.2;
 }
 
-.project__item__desc::before {
-  content: "프로젝트 설명";
-  font-weight: bold;
-  margin-bottom: 0.5rem;
+.project__prev-btn {
+  left: 1em;
+}
+
+.project__next-btn {
+  right: 1em;
+}
+
+.project__btn {
+  position: absolute;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.project__btn i {
+  pointer-events: none;
+}
+
+@media screen and (max-width: 768px) {
+  .project {
+    font-size: 1rem;
+  }
+
+  .project__item__container {
+    width: 100%;
+  }
+
+  .project__item__title {
+    font-size: 1.1rem;
+  }
+
+  .project__items {
+    width: 100%;
+  }
+
+  .project__btn {
+    font-size: 1.5rem;
+  }
+}
+
+body[data-mode="dark"] .project__item {
+  border: 3px solid var(--color);
+  border-top: 1px solid var(--color);
+  border-bottom: 4px solid var(--color);
+}
+
+body[data-mode="dark"] .project__item:hover {
+  border: 3px solid var(--bright-color);
+  border-top: 1px solid var(--bright-color);
+  border-bottom: 4px solid var(--bright-color);
+}
+
+body[data-mode="dark"] .project__btn {
+  color: white;
 }

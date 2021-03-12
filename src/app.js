@@ -15,7 +15,7 @@ export default class App{
                 }
             })
         },{
-            threshold: .3
+            threshold: .4
         })
 
         this.modal = new Modal($target);
