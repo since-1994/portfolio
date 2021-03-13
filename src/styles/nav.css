@@ -14,7 +14,7 @@
 
 body[data-mode="dark"] .nav {
   color: white;
-  background-color: black;
+  background-color: rgb(43, 43, 43);
 }
 
 .nav__left {

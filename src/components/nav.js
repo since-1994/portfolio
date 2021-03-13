@@ -42,15 +42,15 @@ export default class Nav{
     render = () => {
         const template = `
             <div class="nav__left">
-                <div class="nav__item nav__item--left">
+                <div class="nav__item nav__item--left" data-id= 0 >
                     <span>Home</span>
                     <div class="nav__item-reveal"></div>
                 </div>
-                <div class="nav__item nav__item--left">
+                <div class="nav__item nav__item--left" data-id = 1>
                     About me
                     <div class="nav__item-reveal"></div>
                 </div>
-                <div class="nav__item nav__item--left">
+                <div class="nav__item nav__item--left" data-id = 3>
                     Projects
                     <div class="nav__item-reveal"></div>
                 </div>
@@ -69,5 +69,18 @@ export default class Nav{
 
         const moreBtn = document.querySelector('.more-btn');
         moreBtn.addEventListener('click', this.onClickMoreBtn);
+
+
+        const items = document.querySelectorAll('.nav__item--left');
+        items.forEach(i => {
+            i.addEventListener('click', () => {
+                const id = i.dataset.id;
+                window.scroll({
+                    top: window.innerHeight*id,
+                    left: 0,
+                    behavior: 'smooth'
+                  });
+            })
+        })
     }
 }
