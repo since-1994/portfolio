@@ -26,6 +26,7 @@ const day = ['일요일', '월요일', '화요일', '수요일', '목요일', '�
 const now = new Date();
 const h = now.getHours();
 const d = day[now.getDay()];
+console.log(d);
 
 let time;
 if(h < 7){
