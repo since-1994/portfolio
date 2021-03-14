@@ -7,7 +7,7 @@ import Project from "./components/project.js";
 
 export default class App{
 
-    constructor($target, day, time){
+    constructor($target, day, time, projects){
         this.io = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if(entry.isIntersecting){
@@ -22,7 +22,7 @@ export default class App{
         this.nav = new Nav($target, this.toggleMode, this.modal.openModal);
         this.home = new Home($target, this.observe, day, time);
         this.about = new About($target, this.observe);
-        this.project = new Project($target, this.observe);
+        this.project = new Project($target, this.observe, projects);
         this.setMode();
     }
 
@@ -30,17 +30,25 @@ export default class App{
         this.io.observe(element);
     }
     setMode = () => {
-        if(window.matchMedia('(prefers-color-scheme: dark)').matches)
-            document.body.dataset.mode = 'dark';
-        else   
-            document.body.dataset.mode = 'light';
+        const mode = localStorage.getItem('MODE');
+        if(mode){
+            document.body.dataset.mode = mode;
+        }else{
+            if(window.matchMedia('(prefers-color-scheme: dark)').matches)
+                document.body.dataset.mode = 'dark';
+            else   
+                document.body.dataset.mode = 'light';
+        }
     }
 
     toggleMode = () => {
-        if(document.body.dataset.mode !== 'dark')
+        if(document.body.dataset.mode !== 'dark'){
+            localStorage.setItem('MODE', 'dark');
             document.body.dataset.mode = 'dark';
-        else 
+        }else {
+            localStorage.setItem('MODE', 'light');
             document.body.dataset.mode = 'light';
+        }
     }
 
 }

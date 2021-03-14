@@ -20,11 +20,15 @@ export default class Modal{
         <div class="modal__overlay"></div>
         <div class="modal__content">
             <div class="modal__close-btn"><i class="fas fa-times"></i></div>
-            <div class="modal__content__item">
-              <i class="fab fa-github"></i> 
-              <span>Github</span>
-            </div>
-            <div class="modal__content__item"><div class="modal__content__item-logo">V</div> Velog</div>
+            <a href="https://github.com/since-1994" target="_blank">
+                <div class="modal__content__item">
+                <i class="fab fa-github"></i> 
+                <span>Github</span>
+                </div>
+            </a>
+            <a href="https://velog.io/@since-1994" target="_blank">
+                <div class="modal__content__item"><div class="modal__content__item-logo">V</div> Velog</div>
+            </a>
         </div>
         `
         this.modal.innerHTML = template;    

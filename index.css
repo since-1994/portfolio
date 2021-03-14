@@ -1,11 +1,11 @@
 * {
   box-sizing: border-box;
-  font-family: "Nanum Gothic", sans-serif;
 }
 
 body {
   overflow-x: hidden;
   width: 100%;
+  font-family: "Nanum Gothic", sans-serif;
 }
 
 /* body::-webkit-scrollbar {

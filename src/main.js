@@ -1,5 +1,34 @@
 import App from './app.js';
 
+const projects = [
+    {
+        indicator: 'none',
+        link: 'https://github.com/since-1994/todo',
+        title: '맥북 컨셉의 투두리스트',
+        desc: 'HTML, CSS, JavaScript만으로 제작한 맥북 컨셉의 투두리스트 입니다. 투두리스트 이외에도 뮤직 플레이어, 날씨앱, 그림판 등의 기능이 구현되어 있습니다. Nomadcoders.co에서 주최한 투두리스트 대회에 나가기 위해 제작되었으며 대상을 수상하였습니다.',
+        img: './src/assets/todo1.png'
+    },
+    {
+        indicator: 'none',
+        link: 'https://github.com/since-1994/youtube',
+        title: '유튜브 클론',
+        desc: '서버에 대한 이해를 넓히기 위해 진행한 유튜브 클론 프로젝트입니다. 서버 구축 프레임워크인 Express.js를 사용하여 서버를 구성하였고 여러 Middleware와 MongoDB, AWS S3 등이 프로젝트에 사용되었습니다. 주요 기능으로 회원 가입, 로그인, 영상 CRUD, 댓글 CRUD가 구현되어 있습니다.',
+        img: './src/assets/youtube1.jpg'
+    },
+    {
+        indicator: 'none',
+        link: 'https://github.com/since-1994/portfolio',
+        title: '프로젝트 및 자기 소개 페이지',
+        desc: '프로젝트 및 자기 소개를 위해 제작한 페이지 입니다. ES6 모듈 시스템을 활용하여 클래스 기반의 component로 나누어 제작해보았습니다. 구현된 주요 기능으로 다크 모드와 캐러셀이 있습니다.',
+        img: './src/assets/port1.png'
+    }
+];
+
+const first = projects[projects.lenth-1];
+const last = projects[0];
+projects.unshift({...first, indicator:'first'});
+projects.push({...last, indicator:'last'});
+
 const content = `저는 어릴적부터 결과물 없이 어떤 학문을 공부하는 것이 굉장히 힘들었습니다. 
 그래서 꼭 공부를 하고 관련된 문제가 있다면 풀어봤습니다.
 초등학교때는 기탄수학을 주구장창 풀었고 
@@ -40,4 +69,4 @@ if(h < 7){
 }else{
     time = '저녁';
 }
-const app = new App(document.querySelector('#root'), d, time);
+const app = new App(document.querySelector('#root'), d, time, projects);

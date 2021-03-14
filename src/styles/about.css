@@ -1,5 +1,6 @@
 .about {
   height: fit-content;
+  font-family: "Nanum Gothic", sans-serif;
 }
 .about__content {
   line-height: 1.5;
