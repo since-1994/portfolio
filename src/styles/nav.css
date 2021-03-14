@@ -40,7 +40,7 @@ body[data-mode="dark"] .nav {
 
 @media screen and (max-width: 768px) {
   .nav .nav__item {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 }
 
