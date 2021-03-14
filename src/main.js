@@ -22,10 +22,11 @@ const content = `저는 어릴적부터 결과물 없이 어떤 학문을 공부
 현재는 React를 공부하고 있습니다. 
 비슷한 목표를 가진 사람들에 비해 늦게 개발을 시작한 것이 조금은 후회스럽지만 늦은만큼 더욱 빠르고 단단하게 성장하려 노력하고 있습니다.`;
 
-const day = ['월요일', '화요일', '수요일', '목요일', '금요일', '토요일', '일요일'];
+const day = ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'];
 const now = new Date();
 const h = now.getHours();
-const d = day[now.getDay()-1];
+const d = day[now.getDay()];
+
 let time;
 if(h < 7){
     time = '새벽';
