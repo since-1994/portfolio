@@ -47,11 +47,11 @@ export default class Nav{
                     <div class="nav__item-reveal"></div>
                 </div>
                 <div class="nav__item nav__item--left" data-id = 1>
-                    About me
+                    <span>About me</span>
                     <div class="nav__item-reveal"></div>
                 </div>
                 <div class="nav__item nav__item--left" data-id = 3>
-                    Projects
+                    <span>Projects</span>
                     <div class="nav__item-reveal"></div>
                 </div>
             </div>
