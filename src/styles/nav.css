@@ -38,7 +38,7 @@ body[data-mode="dark"] .nav {
   overflow-x: hidden;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 768px) {
   .nav .nav__item {
     font-size: 1rem;
   }
